@@ -9,10 +9,11 @@ The following are the features present in the kanban board that I am creating:
 1. Ability to add tasks in the first column ✅
 2. Ability to drag and drop each of the created task from one column to another ✅
 3. Ability to add new boards ✅
+4. Ability to edit a task ✅
 
 ## features under development
 The following features are being worked upon to be added to the kanban board:
-1. Ability to edit a task ✍️
+1. Ability to edit a board's name ✍️
 
 
 ## features in backlog
