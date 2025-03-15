@@ -40,14 +40,22 @@ addTask.addEventListener("click", () => {
     newTask.textContent = input;
     newTask.classList.add("item");
     newTask.setAttribute("draggable", true);
+
     newTask.addEventListener("dragstart", () => {
         newTask.classList.add("flying");
     })
+
     newTask.addEventListener("dragend", () => {
         newTask.classList.remove("flying");
     })
+
+    newTask.addEventListener("click", () => {
+        const input = prompt("Enter updated name to this task");
+        if (!input) return;
+        newTask.textContent = input;
+    })
+
     if (firstBoard) {
         firstBoard.appendChild(newTask);
     }
 })
-
