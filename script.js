@@ -7,13 +7,16 @@ const task = document.querySelector(".item");
 
 
 function dragOver(element) {
-    element.addEventListener("dragover", () => {
+    element.addEventListener("dragover", (e) => {
+        e.preventDefault();
         const elementComingAbove = document.querySelector(".flying");
         elementComingAbove.addEventListener("dragend", () => {
             element.appendChild(elementComingAbove);
         })
     })
 }
+
+board.forEach(dragOver)
 
 addBoard.addEventListener("click", () => {
     const input = prompt("Enter the board name");
@@ -24,7 +27,9 @@ addBoard.addEventListener("click", () => {
     hTwoElement.classList.add("board-title");
     hTwoElement.textContent = input;
     newBoard.appendChild(hTwoElement);
-    boardContainer.insertBefore(newBoard, addBoard)
+    boardContainer.insertBefore(newBoard, addBoard);
+
+    dragOver(newBoard);
 })
 
 
@@ -46,4 +51,3 @@ addTask.addEventListener("click", () => {
     }
 })
 
-board.forEach(dragOver)
