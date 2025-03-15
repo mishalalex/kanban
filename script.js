@@ -1,6 +1,7 @@
 const boardContainer = document.querySelector(".container");
 const firstBoard = document.querySelector(".container").firstElementChild;
 const board = document.querySelectorAll(".board");
+const boardTitle = document.querySelectorAll(".board-title");
 const addTask = document.querySelector("#add-task-btn");
 const addBoard = document.querySelector("#add-board-btn");
 const task = document.querySelector(".item");
@@ -16,7 +17,18 @@ function dragOver(element) {
     })
 }
 
+function changeBoardTitle(element) {
+    if (element) {
+        element.addEventListener("click", () => {
+            const input = prompt("Enter updated name to this board");
+            if (!input) return;
+            element.textContent = input;
+        })
+    }
+}
+
 board.forEach(dragOver)
+boardTitle.forEach(changeBoardTitle)
 
 addBoard.addEventListener("click", () => {
     const input = prompt("Enter the board name");
@@ -28,10 +40,9 @@ addBoard.addEventListener("click", () => {
     hTwoElement.textContent = input;
     newBoard.appendChild(hTwoElement);
     boardContainer.insertBefore(newBoard, addBoard);
-
     dragOver(newBoard);
+    changeBoardTitle(hTwoElement);
 })
-
 
 addTask.addEventListener("click", () => {
     const input = prompt("Enter a task");

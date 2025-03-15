@@ -10,18 +10,18 @@ The following are the features present in the kanban board that I am creating:
 2. Ability to drag and drop each of the created task from one column to another ✅
 3. Ability to add new boards ✅
 4. Ability to edit a task ✅
+5. Ability to edit a board's name ✅
 
 ## features under development
 The following features are being worked upon to be added to the kanban board:
-1. Ability to edit a board's name ✍️
+1. Ability to delete a task ✍️
 
 
 ## features in backlog
 The following features are currently in backlog (to be implemented later):
-1. Ability to delete a task ❌
-2. Ability to delete a board ❌
-3. Ability to sort tasks in a board by drag and drop method ❌
-4. Store the tasks in browser's local storage such that the tasks aren't gone when the page is refreshed ❌
-5. Board title displaying the count of tasks which dynamically changes when user updates a board ❌
-6. Add created time on a task ❌
-7. Add last updated time on a task ❌
+1.  Ability to delete a board ❌
+2. Ability to sort tasks in a board by drag and drop method ❌
+3. Store the tasks in browser's local storage such that the tasks aren't gone when the page is refreshed ❌
+4. Board title displaying the count of tasks which dynamically changes when user updates a board ❌
+5. Add created time on a task ❌
+6. Add last updated time on a task ❌
