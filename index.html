@@ -11,14 +11,34 @@
 
 <body>
 
-    <div class="container">
-        <div class="board">
-            <h2 class="board-title">Todo</h2>
-        </div>
+    <div class="whole-board">
+        <div class="container">
+            <div class="board">
+                <div class="board-head">
+                    <h2 class="board-title">Todo</h2>
+                    <p class="delete-board-btn">❌</p>
+                </div>
+                <div class="board-body"></div>
+            </div>
+            <div class="board">
+                <div class="board-head">
+                    <h2 class="board-title">Doing</h2>
+                    <p class="delete-board-btn">❌</p>
+                </div>
+                <div class="board-body"></div>
+            </div>
+            <div class="board">
+                <div class="board-head">
+                    <h2 class="board-title">Done</h2>
+                    <p class="delete-board-btn">❌</p>
+                </div>
+                <div class="board-body"></div>
+            </div>
 
-        <button id="add-board-btn">Add Board</button>
+            <button id="add-board-btn">Add Board</button>
+        </div>
+        <button id="add-task-btn">Add Task</button>
     </div>
-    <button id="add-task-btn">Add Task</button>
 
     <script src="script.js"></script>
 </body>
