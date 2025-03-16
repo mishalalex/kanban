@@ -6,6 +6,7 @@ const deleteBoardButtons = document.querySelectorAll('.delete-board-btn');
 const boardBodies = document.querySelectorAll(".board-body");
 
 const addTask = document.querySelector("#add-task-btn");
+const deleteTaskButtons = document.querySelectorAll('.delete-task-btn');
 const addBoardButton = document.querySelector("#add-board-btn");
 
 const task = document.querySelector(".board-item");
@@ -44,7 +45,7 @@ function deleteBoard(element) {
 function deleteTask(element) {
     if (element) {
         element.addEventListener("click", () => {
-            if (confirm("Are you sure you want to remove this board?")) {
+            if (confirm("Are you sure you want to remove this task?")) {
                 element.parentElement.remove();
             }
         })
@@ -54,6 +55,7 @@ function deleteTask(element) {
 boardBodies.forEach(dragOver)
 boardTitles.forEach(changeBoardTitle)
 deleteBoardButtons.forEach(deleteBoard)
+deleteTaskButtons.forEach(deleteTask)
 
 addBoardButton.addEventListener("click", () => {
     const input = prompt("Enter the board name");
@@ -95,7 +97,9 @@ addTask.addEventListener("click", () => {
     const deleteItem = document.createElement('p');
 
     taskName.textContent = input;
+
     deleteItem.textContent = "❌";
+    deleteItem.classList.add('delete-task-btn');
 
     task.classList.add("board-item");
     task.setAttribute("draggable", true);
@@ -108,11 +112,13 @@ addTask.addEventListener("click", () => {
         task.classList.remove("flying");
     })
 
-    task.addEventListener("click", () => {
+    taskName.addEventListener("click", () => {
         const input = prompt("Enter updated name to this task");
         if (!input) return;
         taskName.textContent = input;
     })
+
+    deleteTask(deleteItem)
 
     task.appendChild(taskName);
     task.appendChild(deleteItem);
